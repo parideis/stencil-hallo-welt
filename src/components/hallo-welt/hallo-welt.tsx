@@ -8,7 +8,7 @@ export class HalloWelt implements ComponentInterface {
 
   render() {
     return (
-      <Host>Test
+      <Host>
         <slot></slot>
       </Host>
     );
