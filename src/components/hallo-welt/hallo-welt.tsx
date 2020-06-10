@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h } from '@stencil/core';
+import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'hallo-welt',
@@ -6,10 +6,13 @@ import { Component, ComponentInterface, Host, h } from '@stencil/core';
 })
 export class HalloWelt implements ComponentInterface {
 
+  @Prop() name: string;
+  
   render() {
     return (
       <Host>
         <slot></slot>
+        <p>Hallo {this.name}</p>
       </Host>
     );
   }
