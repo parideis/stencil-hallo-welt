@@ -29,7 +29,7 @@ describe("testing-compo", () => {
         <mock:shadow-root>
           <slot></slot>
           <p>
-            Hallo&nbsp;Anna
+            Hallo Anna
           </p>
         </mock:shadow-root>
       </hallo-welt>
@@ -64,7 +64,7 @@ describe("testing-compo", () => {
         <mock:shadow-root>
           <slot></slot>
           <p>
-            Hallo&nbsp;Anna
+            Hallo Anna
           </p>
         </mock:shadow-root>
         <h1>Willkommen</h1>

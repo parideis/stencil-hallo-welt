@@ -12,7 +12,7 @@ export class HalloWelt implements ComponentInterface {
     return (
       <Host>
         <slot></slot>
-        <p>Hallo {this.name}</p>
+        <p>Hallo {this.name}</p>
       </Host>
     );
   }
