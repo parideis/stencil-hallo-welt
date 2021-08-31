@@ -13,7 +13,29 @@ describe("hallo-welt", () => {
     const page = await newE2EPage();
     await page.setContent("<hallo-welt name='Anna'></hallo-welt>");
 
-    const element = await page.find("hallo-welt >>> p");
-    expect(element).toEqualText("Hallo Anna");
+    const paragraph = await page.find("hallo-welt >>> p");
+    expect(paragraph).toEqualText("Hallo Anna");
+  });
+
+  it("can find the given child component", async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      "<hallo-welt name='Anna'><h1>Willkommen</h1>hallo-welt>"
+    );
+    const child = await page.find("hallo-welt > h1");
+    expect(child).toEqualHtml(`<h1>Willkommen</h1>`);
+  });
+
+  it("can find the given name and child component", async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      "<hallo-welt name='Anna'><h1>Willkommen</h1>hallo-welt>"
+    );
+
+    const paragraph = await page.find("hallo-welt >>> p");
+    expect(paragraph).toEqualText("Hallo Anna");
+
+    const child = await page.find("hallo-welt > h1");
+    expect(child).toEqualHtml(`<h1>Willkommen</h1>`);
   });
 });
